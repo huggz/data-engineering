@@ -1,0 +1,5 @@
+%h2 Resend unlock instructions
+= simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, role: 'form' }) do |f|
+  = f.input :email, autofocus: true
+  = f.submit 'Resend unlock instructions', class: 'btn btn-primary'
+= render 'users/shared/links'

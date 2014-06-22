@@ -1,0 +1,21 @@
+%h1 Items
+
+%ol.breadcrumb
+  %li= link_to 'Merchants', merchants_path
+  %li.active= @merchant.name
+
+.panel.panel-default
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Description
+        %th.text-right Price
+        %th.text-right &nbsp;
+    %tbody
+      - @items.each do |item|
+        %tr
+          %td= item.description
+          %td.text-right= number_to_currency(item.price)
+          %td.text-right= link_to 'View Purchases &raquo;'.html_safe, merchant_item_purchases_path(item.merchant, item)
+
+= paginate @items

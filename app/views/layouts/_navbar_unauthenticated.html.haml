@@ -1,0 +1,4 @@
+= simple_form_for :user, url: user_session_path, html: { role: 'form', class: 'navbar-form navbar-right' } do |f|
+  = f.input :email, class: 'form-control', label: false, placeholder: 'Email Address'
+  = f.input :password, class: 'form-control', label: false, placeholder: 'Password'
+  = f.submit 'Sign in', class: 'btn btn-success'

@@ -1,0 +1,20 @@
+%h1 Merchants
+
+%ol.breadcrumb
+  %li.active= Merchants
+
+.panel.panel-default
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Address
+        %th.text-right &nbsp;
+    %tbody
+      - @merchants.each do |merchant|
+        %tr
+          %td= merchant.name
+          %td= merchant.address
+          %td.text-right= link_to 'View Items &raquo;'.html_safe, merchant_items_path(merchant)
+
+= paginate @merchants

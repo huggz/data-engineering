@@ -1,0 +1,22 @@
+%h1 Purchases
+
+%ol.breadcrumb
+  %li= link_to 'Merchants', merchants_path
+  %li= link_to @item.merchant.name, merchant_items_path(@item.merchant)
+  %li.active= @item.description
+
+.panel.panel-default
+  %table.table.table-hover
+    %thead
+      %tr
+        %th Purchaser Name
+        %th.text-right Quantity
+        %th.text-right Total Cost
+    %tbody
+      - @purchases.each do |purchase|
+        %tr
+          %td= purchase.purchaser.name
+          %td.text-right= purchase.quantity
+          %td.text-right= number_to_currency(purchase.total_cost)
+
+= paginate @purchases

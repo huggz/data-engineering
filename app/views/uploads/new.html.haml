@@ -1,0 +1,8 @@
+%h1 Upload CSV
+
+%p
+  Please ensure your CSV is tab-delimited and has columns "purchaser name",
+  "item description", "item price", "purchase count", "merchant address", and
+  "merchant name".
+
+= render 'form', upload: @upload
