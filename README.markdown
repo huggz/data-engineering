@@ -19,7 +19,8 @@ To set up the application on your (Linux or OS X) system:
     specify a Ruby environment for your Ruby binary & gemset.)
 3.  `cd` into the top-level repo folder, and run `bundle install` to install the
     gems needed by the app.
-4.  Run `bundle exec db:setup` to create your database and prepare its schema.
+4.  Run `bundle exec rake db:setup` to create your database and prepare its
+    schema.
 5.  Run `bundle exec rails server` to run the server.
 
 ## Usage
